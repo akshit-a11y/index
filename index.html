@@ -6,16 +6,22 @@
     <title>Rotating Screen</title>
     <style>
         body {
-            transition: transform 1s;
+            transition: transform 1s; /* Smooth transition */
+            transform-origin: center; /* Rotate around the center */
+            height: 100vh; /* Full height */
+            display: flex; /* Center content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            font-size: 24px; /* Increase font size */
         }
     </style>
     <script>
         function rotateScreen() {
             let angle = 0;
             setInterval(function() {
-                angle = (angle + 360) % 360;
-                document.body.style.transform = 'rotate(' + angle + 'deg)';
-            }, 1000); // 1000 milliseconds (1 second) for each rotation
+                angle = (angle + 360) % 360; // Increment angle
+                document.body.style.transform = 'rotate(' + angle + 'deg)'; // Apply rotation
+            }, 1000); // Rotate every second
         }
     </script>
 </head>
