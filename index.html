@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotating Screen</title>
     <style>
-        body {
-            transition: transform 1s; /* Smooth transition for rotation */
-            transform-origin: center center; /* Rotate around the center */
-            height: 100vh; /* Full height of the viewport */
+        html, body {
+            height: 100%; /* Ensure full height for both html and body */
+            margin: 0; /* Remove default margin */
             display: flex; /* Use flexbox for centering */
             justify-content: center; /* Center content horizontally */
             align-items: center; /* Center content vertically */
-            font-size: 36px; /* Increase font size for visibility */
             overflow: hidden; /* Hide overflow to avoid scrollbars */
             background-color: #f0f0f0; /* Optional background color */
+            transition: transform 1s; /* Smooth transition for rotation */
+            transform-origin: center center; /* Rotate around the center */
         }
     </style>
     <script>
@@ -23,7 +23,7 @@
         function rotateScreen() {
             setInterval(function() {
                 angle = (angle + 10) % 360; // Increment angle by 10 degrees
-                document.body.style.transform = 'rotate(' + angle + 'deg)'; // Apply rotation
+                document.documentElement.style.transform = 'rotate(' + angle + 'deg)'; // Apply rotation to the entire page
             }, 100); // Rotate every 100 milliseconds
         }
     </script>
